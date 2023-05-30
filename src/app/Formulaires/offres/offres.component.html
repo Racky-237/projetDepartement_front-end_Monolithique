@@ -1,0 +1,49 @@
+
+<section class="h-100 gradient-form" style="background-color: #f5f5f5;">
+  <div class="container-md h-40">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-xl-8">
+        <div class="card rounded-5 text-black my-5">
+          <div class="card-body p-md-5 mx-md-4">
+            <!--Insertion du titre du formulaire-->
+            <div class="text-center mb-5">
+              <h2 class="pb-1">Publish a new offer</h2>
+            </div>
+
+            <!--Choix du type d'offre-->
+            <div class="d-md-flex justify-content-center align-items-center mb-3 py-2">
+              <div class="form-check form-check-inline mb-0 me-4">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" (click)="afficherChamp('emploi')" checked/>
+                <label class="form-check-label" for="emploiChoise">Emploi</label>
+              </div>
+
+              <div class="form-check form-check-inline mb-0 me-4">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" (click)="afficherChamp('parrainage')" />
+                <label class="form-check-label" for="parrainageChoise">Parrainage</label>
+              </div>
+
+              <div class="form-check form-check-inline mb-0">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" (click)="afficherChamp('stage')"/>
+                <label class="form-check-label" for="stageChoise">Stage</label>
+              </div>
+            </div>
+
+            <div *ngIf="champSelectionne =='emploi'">
+              <app-offre-emploi></app-offre-emploi>
+            </div>
+
+            <div *ngIf="champSelectionne =='stage'">
+              <app-offre-stage></app-offre-stage>
+            </div>
+
+            <div *ngIf="champSelectionne =='parrainage'">
+              <app-offre-parrainage></app-offre-parrainage>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

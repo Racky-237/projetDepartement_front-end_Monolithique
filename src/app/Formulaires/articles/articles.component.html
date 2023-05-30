@@ -1,0 +1,65 @@
+
+<section class="h-100 gradient-form" style="background-color: #f5f5f5;">
+  <div class="container-md h-40">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-xl-8">
+        <div class="card rounded-5 text-black my-3">
+          <div class="card-body p-md-5 mx-md-4">
+            <!--Insertion du titre du formulaire-->
+            <div class="text-center mb-5">
+              <h2 class="pb-1">New article</h2>
+            </div>
+
+            <!--Formulaire-->
+            <form [formGroup]="form" (ngSubmit)="submit()">
+              <div class="form-outline mb-1 small">
+                <input type="text" id="form2Example11" class="form-control form-control-sm"
+                  placeholder="titre de l'article" formControlName="titre"/>
+                <label class="form-label small" for="form2Example11">Title</label>
+              </div>
+
+              <div class="form-outline mb-1 small">
+                <input type="text" id="form2Example11" class="form-control form-control-sm"
+                  placeholder="theme de l'article" formControlName="theme"/>
+                <label class="form-label small" for="form2Example11">Them</label>
+              </div>
+
+              <div class="form-outline mb-1 small">
+                <input type="text" id="form2Example11" class="form-control form-control-sm"
+                  placeholder="journal de parution"/>
+                <label class="form-label small" for="form2Example11">Newspaper</label>
+              </div>
+
+              <div class="form-outline mb-1 small">
+                <input type="text" id="form2Example11" class="form-control form-control-sm"
+                  placeholder="lien vers l'article" formControlName="lien"/>
+                <label class="form-label small" for="form2Example11">Link to article</label>
+              </div>
+
+              <div class="form-outline mb-1 small">
+                <input type="text" id="form2Example11" class="form-control form-control-sm"
+                  placeholder="nom de l'auteur" formControlName="auteur"/>
+                <label class="form-label small" for="form2Example11">Author name</label>
+              </div>
+
+              <div class="form-outline mb-4 small">
+                <input type="text" id="form2Example11" class="form-control form-control-sm"
+                  placeholder="nom des co-auteur de l'article"/>
+                <label class="form-label small" for="form2Example11">Co-author</label>
+              </div>
+
+              <!-- Boutons Creer et annuler -->
+              <div class="modal-footer mb-2">
+                <button [disabled]="form.invalid" class="btn btn-primary btn-block fa-lg gradient-custom-2 border border-color-none me-4 fs-5" type="submit" data-dismiss="modal">Create</button>
+                <button type="submit" class="btn btn-primary btn-block fa-lg gradient-custom-2 border border-color-none me-4 fs-5">Cancel</button>
+              </div>
+
+            </form>
+          </div>
+       </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+

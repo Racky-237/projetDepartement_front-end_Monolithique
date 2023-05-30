@@ -1,0 +1,94 @@
+<main>
+
+  <div id="sous-nav" class="row justify-content-center bg-primary border-bottom border-muted" [ngClass]="{'fixed-top': isFixed}">
+
+    <!-- Elements du menu -->
+      <div class="col-xl-10">
+        <div class="row">
+          <div class="col-xl-3 m-2"></div>
+            <div class="col-xl-7 m-1 pt-2">
+              <ul class="menu">
+                <li>
+                  <a href="" class="nav-link" id="menu-item">Articles</a>
+                </li>
+                <li>
+                  <a href="" class="nav-link dropdown-toggle" id="menu-item">
+                    Projects
+                  </a>
+                  <ul class="sub-menu text-center">
+                    <li>
+                      <a href="" class="sub-item">Termine(e)</a>
+                    </li>
+                    <li>
+                      <a href="" class="sub-item">En cours</a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="" class="nav-link dropdown-toggle" id="menu-item">
+                    Requests
+                  </a>
+                  <ul class="sub-menu text-center">
+                    <li>
+                      <a href="" class="sub-item">Emploi</a>
+                    </li>
+                    <li>
+                      <a href="" class="sub-item">Parrainage</a>
+                    </li>
+                    <li>
+                      <a href="" class="sub-item">Stage</a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="" class="nav-link dropdown-toggle" id="menu-item">
+                    Propositions
+                  </a>
+                  <ul class="sub-menu text-center">
+                    <li>
+                      <a href="" class="sub-item">Emploi</a>
+                    </li>
+                    <li>
+                      <a href="" class="sub-item">Parrainage</a>
+                    </li>
+                    <li>
+                      <a href="" class="sub-item">Stage</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+
+          </div>
+        </div>
+      </div>
+
+    <!-- <div class="ms-5 ps-5 pt-3" id="navbarNav">
+    </div> -->
+
+  </div>
+
+
+
+  <div class="row justify-content-center bg-success mb-5 border-bottom border-muted">
+
+    <div class="card bg-primary col-xl-3 text-center mb-4 border-0">
+      <img src="/assets/images/photoProfil.jpg" style="width: 200px; border-radius: 20px;" alt="photo de profil"
+       class="mx-auto my-5">
+      <div>
+        <h5>{{prenom}} {{nom}}</h5>
+        <p>{{statut}}</p>
+      </div>
+      <div class="d-flex justify-content-center mt-5" style="margin-bottom: 300px;">
+        <button class="btn btn-primary w-75 fa-lg gradient-custom-2 border border-color-none fs-6" type="submit">Edite your profil</button>
+      </div>
+      <hr>
+      <p class="text-muted">
+        <a href="" class="nav-link fst-italic" id="delete">Delete your account</a>
+      </p>
+    </div>
+
+    <div class="card bg-primary col-xl-8 mx-2 mb-4 border-0">
+
+    </div>
+  </div>
+</main>

@@ -1,0 +1,74 @@
+
+/* On stylise le header */
+header{
+  height: 100vh;
+  background-image: url('/assets/images/fond-header4.jpg');
+  background-size: cover;
+  background-position: center;
+}
+/* Responsive du header */
+@media (max-width: 600px){
+  header{
+    height: 400px;
+  }
+}
+
+/*On donne une hauteur au corps de notre page */
+.content{
+  height: 2000px;
+}
+
+/* On definit la transition qui se fera pour le changement de couleur de la navbar */
+.navbar{
+  transition: background-color 0s ease-in-out;
+}
+
+/* On definit la couleur que prendra la navbar lorsqu'elle sera fixe */
+nav.fixed-top{
+  background:  #c890fc;
+
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to right, #2493ee, #3936d8, #2540df, #441db1);
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, #2493ee, #3936d8, #2540df, #441db1);
+}
+
+#navL{
+  margin-right: 20px;
+  color: white;
+  font-weight: bolder;
+  font-size: large;
+  border-radius: 50px;
+  padding: 0 10px;
+  text-align: center;
+}
+
+#navL:hover{
+  background-color: white;
+  color: #441db1;
+}
+
+.signUp{
+  color: white;
+  border-radius: 50px;
+  padding: 0 10px;
+  text-align: center;
+}
+
+.signUp:hover{
+  color: #441db1;
+  background-color: white;
+}
+
+.signIn{
+  color: #8bb3d8;
+  border-radius: 50px;
+  padding: 0 10px;
+  text-align: center;
+}
+
+.signIn:hover{
+  color: white;
+  background-color: #8bb3d8;
+}

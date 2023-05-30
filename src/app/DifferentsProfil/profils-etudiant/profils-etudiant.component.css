@@ -1,0 +1,65 @@
+
+/* Couleur de la seconde navbar */
+nav.fixed-top{
+  background: rgb(55, 74, 245);
+}
+
+/* couleur du lien de suppression de compte */
+#delete:hover{
+  color: #441db1;
+}
+
+/* Mise en forme du menu de la seconde navbar */
+.menu{
+  list-style-type: none;
+  display: flex;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
+/* Mise en forme de chaque element du menu */
+#menu-item{
+  color: white;
+  margin: 0 40px 0 10px;
+  padding-bottom: 10px;
+  margin-bottom: 7px;
+}
+
+/* Couleur de la bordure inferieure et du texte lors du survole d'un element du men */
+#menu-item:hover{
+  border-bottom: 5px solid  #441db1;
+  color: #a798cf;
+}
+
+/* Apparition de la scrollbar horizontale dans la seconde navbar pour les ecrans de telephone et les tablettes */
+@media(max-width:800px){
+  #sous-nav{
+    overflow: auto;
+  }
+}
+
+/* On enleve le style liste au sous menu */
+.sub-menu{
+  list-style-type: none;
+  display: none;
+}
+
+/* On enleve le style de lien aux elements du sous menu et ont leur met une couleur blanche */
+.sub-item{
+  text-decoration: none;
+  color: white;
+}
+
+/* On stylise l'affichage des sous menus lorsqu'on va les survoler */
+.sub-menu li:hover{
+  background-color: #edecf170;
+}
+
+.sub-item:hover{
+  color: #441db1;
+}
+
+/* On fait ressortir les sous menus */
+.menu li:hover .sub-menu{
+  display: block;
+}

@@ -1,0 +1,8 @@
+
+input.ng-valid{
+  border-color: rgb(7, 253, 7);
+}
+
+input.ng-invalid.ng-touched{
+  border-color: rgb(250, 8, 8);
+}
