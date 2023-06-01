@@ -1,94 +1,157 @@
 <main>
+  <!-- navbar principale de la page profil.  -->
+  <div class="barreSecondaire row justify-content-center border-bottom border-black" id="sous-nav" [ngClass]="{'fixed-top': isFixed}">
 
-  <div id="sous-nav" class="row justify-content-center bg-primary border-bottom border-muted" [ngClass]="{'fixed-top': isFixed}">
-
-    <!-- Elements du menu -->
-      <div class="col-xl-10">
-        <div class="row">
-          <div class="col-xl-3 m-2"></div>
-            <div class="col-xl-7 m-1 pt-2">
-              <ul class="menu">
+    <div class="col-xl-10">
+      <div class="row m-0 p-0">
+        <!-- Espacement du menu avec le cote gauche -->
+        <div class="col-xl-3 mt-1 mx-2"></div>
+        <!-- Elements du menu -->
+        <div class="col-xl-7 m-1 pt-3">
+          <ul class="menu text-black fw-semibold">
+            <li>
+              <a href="#" (click)="afficherMenu('overview')" [class.menuActif]="isActive('overview')" class="nav-link ms-4" id="menu-item">Profil</a>
+            </li>
+            <li>
+              <a href="#" (click)="afficherMenu('articles')" [class.menuActif]="isActive('articles')" class="nav-link ms-4" id="menu-item">Articles</a>
+            </li>
+            <li>
+              <a href="#" [class.menuActif]="isActive('projets')" class="nav-link dropdown-toggle" id="menu-item">
+                Projects
+              </a>
+              <ul class="sub-menu">
+                <hr class="mb-2 mx-3">
                 <li>
-                  <a href="" class="nav-link" id="menu-item">Articles</a>
+                  <a href="#" class="mb-2" (click)="afficherSousMenu('projets','termines')" class="sub-item">Termine(e)</a>
                 </li>
                 <li>
-                  <a href="" class="nav-link dropdown-toggle" id="menu-item">
-                    Projects
-                  </a>
-                  <ul class="sub-menu text-center">
-                    <li>
-                      <a href="" class="sub-item">Termine(e)</a>
-                    </li>
-                    <li>
-                      <a href="" class="sub-item">En cours</a>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <a href="" class="nav-link dropdown-toggle" id="menu-item">
-                    Requests
-                  </a>
-                  <ul class="sub-menu text-center">
-                    <li>
-                      <a href="" class="sub-item">Emploi</a>
-                    </li>
-                    <li>
-                      <a href="" class="sub-item">Parrainage</a>
-                    </li>
-                    <li>
-                      <a href="" class="sub-item">Stage</a>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <a href="" class="nav-link dropdown-toggle" id="menu-item">
-                    Propositions
-                  </a>
-                  <ul class="sub-menu text-center">
-                    <li>
-                      <a href="" class="sub-item">Emploi</a>
-                    </li>
-                    <li>
-                      <a href="" class="sub-item">Parrainage</a>
-                    </li>
-                    <li>
-                      <a href="" class="sub-item">Stage</a>
-                    </li>
-                  </ul>
+                  <a href="#" (click)="afficherSousMenu('projets','enCours')" class="sub-item">En cours</a>
                 </li>
               </ul>
-
-          </div>
+            </li>
+            <li>
+              <a href="#" [class.menuActif]="isActive('demandes')" class="nav-link dropdown-toggle" id="menu-item">
+                Requests
+              </a>
+              <ul class="sub-menu">
+                <hr class="mb-2 mx-3">
+                <li class="mb-2">
+                  <a href="#" (click)="afficherSousMenu('demandes','demandeEmploi')" class="sub-item">Emploi</a>
+                </li>
+                <li class="mb-2">
+                  <a href="#" (click)="afficherSousMenu('demandes','demandeEncadrement')" class="sub-item">Encadrement</a>
+                </li>
+                <li class="mb-2">
+                  <a href="#" (click)="afficherSousMenu('demandes','demandeParrainage')" class="sub-item">Parrainage</a>
+                </li>
+                <li>
+                  <a href="#" (click)="afficherSousMenu('demandes','demandeStage')" class="sub-item">Stage</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" [class.menuActif]="isActive('propositions')" class="nav-link dropdown-toggle" id="menu-item">
+                Propositions
+              </a>
+              <ul class="sub-menu">
+                <hr class="mb-2 mx-3">
+                <li class="mb-2">
+                  <a href="#" (click)="afficherSousMenu('propositions','propositionEmploi')" class="sub-item">Emploi</a>
+                </li>
+                <li class="mb-2">
+                  <a href="#" (click)="afficherSousMenu('propositions','propositionParrainage')"class="sub-item">Parrainage</a>
+                </li>
+                <li>
+                  <a href="#" (click)="afficherSousMenu('propositions','propositionStage')" class="sub-item">Stage</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
         </div>
       </div>
-
-    <!-- <div class="ms-5 ps-5 pt-3" id="navbarNav">
-    </div> -->
+    </div>
 
   </div>
 
-
-
-  <div class="row justify-content-center bg-success mb-5 border-bottom border-muted">
-
-    <div class="card bg-primary col-xl-3 text-center mb-4 border-0">
-      <img src="/assets/images/photoProfil.jpg" style="width: 200px; border-radius: 20px;" alt="photo de profil"
-       class="mx-auto my-5">
-      <div>
-        <h5>{{prenom}} {{nom}}</h5>
-        <p>{{statut}}</p>
+  <!-- Corps de la page profil -->
+  <div class="row justify-content-center mb-5 border-bottom border-muted">
+    <!-- Partie gauche avec la photo de profil et les infos personnelles -->
+    <div class="card col-xl-3 text-center mb-4 border-0 shadow-lg">
+      <div class="profil justify-content-center rounded mt-3">
+        <img src="/assets/images/photoProfil.jpg" alt="photo de profil" class="image">
+        <div class="mt-5">
+          <h5>{{prenom}} {{nom}}</h5>
+          <p>{{statut}}</p>
+        </div>
       </div>
-      <div class="d-flex justify-content-center mt-5" style="margin-bottom: 300px;">
+      <div class="edit-btn d-flex justify-content-center pt-5">
         <button class="btn btn-primary w-75 fa-lg gradient-custom-2 border border-color-none fs-6" type="submit">Edite your profil</button>
       </div>
       <hr>
-      <p class="text-muted">
+      <p class="text-black">
         <a href="" class="nav-link fst-italic" id="delete">Delete your account</a>
       </p>
     </div>
 
-    <div class="card bg-primary col-xl-8 mx-2 mb-4 border-0">
+
+    <!-- Zone d'affichage des informations principales situee a droite -->
+    <div class="card col-xl-8 mx-2 mb-4 border-0">
+      <!-- Affichage de la section overview -->
+      <div *ngIf="menuSelectionne =='overview'">
+        <app-vue-generale></app-vue-generale>
+      </div>
+
+      <!-- Affichage de la section articles -->
+      <div *ngIf="menuSelectionne =='articles'">
+        <app-articles-profil-etudiant></app-articles-profil-etudiant>
+      </div>
+
+      <!-- Affichage de la section projets termines -->
+      <div *ngIf="menuSelectionne==='projets' && sousMenuSelectionne =='termines'">
+        <app-projets-termines></app-projets-termines>
+      </div>
+
+      <!-- Affichage de la section projets en cours -->
+      <div *ngIf="menuSelectionne==='projets' && sousMenuSelectionne =='enCours'">
+        <app-projets-en-cours></app-projets-en-cours>
+      </div>
+
+      <!-- Affichage de la section demande emploi-->
+      <div *ngIf="menuSelectionne==='demandes' && sousMenuSelectionne =='demandeEmploi'">
+        <app-demandes-emploi-etudiant></app-demandes-emploi-etudiant>
+      </div>
+
+      <!-- Affichage de la section demande parrainage -->
+      <div *ngIf="menuSelectionne==='demandes' && sousMenuSelectionne =='demandeParrainage'">
+        <app-demandes-parrainage-etudiant></app-demandes-parrainage-etudiant>
+      </div>
+
+      <!-- Affichage de la section demande stage -->
+      <div *ngIf="menuSelectionne==='demandes' && sousMenuSelectionne =='demandeStage'">
+        <app-demandes-stage-etudiant></app-demandes-stage-etudiant>
+      </div>
+
+      <!-- Affichage de la section demande d'encadrement -->
+      <div *ngIf="menuSelectionne==='demandes' && sousMenuSelectionne =='demandeEncadrement'">
+        <app-demandes-encadrement-etudiant></app-demandes-encadrement-etudiant>
+      </div>
+
+      <!-- Affichage de la section proposition emploi -->
+      <div *ngIf="menuSelectionne==='propositions' && sousMenuSelectionne =='propositionEmploi'">
+        <app-propositions-emploi-etudiant></app-propositions-emploi-etudiant>
+      </div>
+
+      <!-- Affichage de la section proposition parrainage -->
+      <div *ngIf="menuSelectionne==='propositions' && sousMenuSelectionne =='propositionParrainage'">
+        <app-propositions-parrainage-etudiant></app-propositions-parrainage-etudiant>
+      </div>
+
+      <!-- Affichage de la section proposition stage -->
+      <div *ngIf="menuSelectionne==='propositions' && sousMenuSelectionne =='propositionStage'">
+        <app-propositions-stage-etudiant></app-propositions-stage-etudiant>
+      </div>
 
     </div>
+
   </div>
 </main>

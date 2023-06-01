@@ -22,6 +22,7 @@ import { ProfilsEntrepriseComponent } from './DifferentsProfil/profils-entrepris
 import { ProfilsEnseignantComponent } from './DifferentsProfil/profils-enseignant/profils-enseignant.component';
 import { HeaderSimpleComponent } from './Shared/header-simple/header-simple.component';
 import { HeaderFixedComponent } from './Shared/header-fixed/header-fixed.component';
+import { ProfilsEtudiantModule } from './DifferentsProfil/profils-etudiant/profils-etudiant.module';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { HeaderFixedComponent } from './Shared/header-fixed/header-fixed.compone
     PropositionsModule,
     DemandesModule,
     OffresModule,
-    InscriptionModule
+    InscriptionModule,
+    ProfilsEtudiantModule
   ],
   providers: [],
   bootstrap: [AppComponent]

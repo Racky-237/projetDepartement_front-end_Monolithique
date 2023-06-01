@@ -1,0 +1,45 @@
+<!-- Titre de la section -->
+<h5 class="mt-5 mb-3 fst-italic ms-4">Mes propositions de parrainage</h5>
+
+  <!-- Lorsqu'il y a au moins une demande -->
+<div class="container" *ngIf="tablePropositionParrainage.length > 0">
+    <div class="box rounded mx-1 mb-3 shadow-lg p-3 mb-5" *ngFor="let item of tablePropositionParrainage">
+      <h6 class="ms-3 mt-3 mb-1">{{item.entreprise}}</h6>
+      <hr class="m-0 mx-3">
+      <div class="mt-3">
+        <div class="ms-3 mb-1">
+          Seteur d'activite:<span class="fw-light ms-3 mb-1">{{item.secteur}}</span>
+        </div>
+      </div>
+      <div class="mt-3">
+        <div class="ms-3 mb-1">
+          Theme:<span class="fw-light ms-3 mb-1">{{item.theme}}</span>
+        </div>
+      </div>
+      <div class="mt-3" *ngIf="item.financement==='oui'">
+        <div class="ms-3 mb-1">
+          Montant du financement:<span class="fw-light ms-3 mb-1">{{item.montant}}FCFA</span>
+        </div>
+      </div>
+      <div class="mt-4">
+        <div class="ms-3 mb-1">
+          <span *ngIf="item.statut!==''" class="fw-light fs-6 fst-italic ms-5 mb-1">{{item.statut}}</span>
+          <span *ngIf="item.statut===''" class="fw-light fs-6 fst-italic ms-5 mb-1">Acceptez-vous cette proposition?</span>
+        </div>
+      </div>
+    </div>
+</div>
+
+<!-- Lorsqu'il n'y a pas de demandes -->
+<div class="container" *ngIf="tablePropositionParrainage.length <= 0">
+  <div class="box rounded mb-3 shadow-lg p-3 mb-5">
+    <h6 class="ms-3 mt-3 mb-1">Aucune proposition de parrainage recues actuellement</h6>
+    <hr class="mt-0 mb-5 mx-3">
+  </div>
+</div>
+
+<hr class="mt-3">
+
+
+
+
